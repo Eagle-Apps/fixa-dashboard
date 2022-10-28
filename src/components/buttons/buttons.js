@@ -7,7 +7,7 @@ export const LargeButton = styled.button`
   border-radius: 5px;
   padding: 10px, 22px, 10px, 22px;
   margin: 8px;
-  font-family: font-family: Montserrat;
+  font-family: Montserrat;
   font-size: ${(props) => props.fontSize || "18px"};
   line-height: ${(props) => props.lineHeight || "21px"};
   font-style: normal;
