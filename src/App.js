@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./dashboard/Index";
 import ClientHome from "./client-dashboard/ClientHome";
-import RequestHistory from "./client-dashboard/RequestHistory";
+import RequestHistory from "./client-dashboard/requesthistory/RequestHistory";
 import ServicePlan from "./client-dashboard/ServicePlan";
 
 function App() {

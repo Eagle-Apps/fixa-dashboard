@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import JsonData from "../data/data.json";
-import CustomTab from "../components/tab/Tabs";
+import JsonData from "../../data/data.json";
+import CustomTab from "../../components/tab/Tabs";
 import RequestTable from "./RequestTable";
-// import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 
 function RequestHistory() {
   const [requests, setRequests] = useState([]);
@@ -33,12 +32,11 @@ function RequestHistory() {
       <div className="allTitle">
         <h3>Request History</h3>
       </div>
-        <CustomTab tabs={tabs} handleFilter={handleFilter} isActive={active}>
+      <CustomTab tabs={tabs} handleFilter={handleFilter} isActive={active}>
+        <RequestTable requests={requests} />
+      </CustomTab>
 
-          <RequestTable requests={requests} />
-        </CustomTab>
-
-        {/* <div className="requestIcons">
+      {/* <div className="requestIcons">
                 <FaAngleLeft className="prevIcon" />
                 <FaAngleRight className="nextIcon" />
               </div> */}

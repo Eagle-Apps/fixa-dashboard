@@ -1,7 +1,16 @@
+import React from "react";
 import { LargeButton, MedButton } from "../components/buttons/buttons";
+import CategoryCard from "../components/cards/CategoryCard";
+import { AutoMobileIcon } from "../components/custom-icon";
 import InfoBox from "../components/InfoBox";
-
+import JsonData from "../data/data.json";
 const ClientHome = () => {
+  const [services, setServices] = React.useState([]);
+
+  React.useEffect(() => {
+    setServices(JsonData.category);
+  }, []);
+
   return (
     <div>
       <div className="row d-flex  text-align-center justify-content-between m-2">
@@ -30,6 +39,19 @@ const ClientHome = () => {
         <LargeButton className="btn btn-outline-primary">
           Track Request
         </LargeButton>
+      </div>
+      <div className="d-flex justify-content-around mt-2">
+        {services.map((service, i) => {
+          return <CategoryCard title={service.categoryTitle} key={i} />;
+        })}
+
+        {/*         
+        // <CategoryCard title="Automobile">
+        //   <AutoMobileIcon />
+        // </CategoryCard>
+        // <CategoryCard title="Automobile">
+        //   <AutoMobileIcon />
+        // </CategoryCard> */}
       </div>
     </div>
   );

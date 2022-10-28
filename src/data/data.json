@@ -56,6 +56,17 @@
       "paymentMethod":"Quick Pay (Bank card)",
       "status":"completed"
     }
+  ], 
+  "category":[
+    {
+    "categoryTitle":"Automobile Mechanic"
+   
+    },
+    {
+      "categoryTitle":"Plumbing Service"
+     
+      }
+
   ]
  
 }

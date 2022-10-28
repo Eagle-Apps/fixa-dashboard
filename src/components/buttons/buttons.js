@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import "./button.css";
 
 export const LargeButton = styled.button`
   height: 116px;
@@ -17,7 +16,6 @@ export const LargeButton = styled.button`
   letter-spacing: 0.4px;
   span {
     margin: 8px;
-   
   }
 `;
 
@@ -28,7 +26,7 @@ export const MedButton = styled.button`
   margin: 5px;
   padding: 8px 19px 8px 19px;
   background-color: ${(props) => props.color || "#fff"};
-  // border: ${(props) => `1px solid ${props.border}` || "#fff"};
+  border: ${(props) => `1px solid ${props.border}` || "#fff"};
   // color: ${(props) => props.border || "#fff"};
   font-style: normal;
   font-weight: 500;
