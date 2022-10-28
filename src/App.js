@@ -3,6 +3,7 @@ import Dashboard from "./dashboard/Index";
 import ClientHome from "./client-dashboard/ClientHome";
 import RequestHistory from "./client-dashboard/requesthistory/RequestHistory";
 import ServicePlan from "./client-dashboard/ServicePlan";
+import Category from "./client-dashboard/allCategories/Category";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route index element={<ClientHome />} />
           <Route path="service-plans" element={<ServicePlan />} />
           <Route path="request-history" element={<RequestHistory />} />
+          <Route path="all-categories" element={<Category />} />
         </Route>
       </Routes>
     </div>
