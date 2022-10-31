@@ -4,6 +4,7 @@ import ClientHome from "./client-dashboard/ClientHome";
 import RequestHistory from "./client-dashboard/requesthistory/RequestHistory";
 import ServicePlan from "./client-dashboard/ServicePlan";
 import Category from "./client-dashboard/allCategories/Category";
+import FixaPay from "./client-dashboard/FixaPay/FixaPay";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route path="service-plans" element={<ServicePlan />} />
           <Route path="request-history" element={<RequestHistory />} />
           <Route path="all-categories" element={<Category />} />
+          <Route path="fixa-pay" element={<FixaPay />} />
+
         </Route>
       </Routes>
     </div>
