@@ -37,7 +37,7 @@ const ClientHome = () => {
       </div>
       <div className="d-flex justify-content-between w-100">
         <h3 className="text-dark">Our Top Services</h3>
-        <Link to="/all-categories" className="text-dark">all categories</Link>
+        <Link to="/dashboard/all-categories" className="text-dark">all categories</Link>
       </div>
       <div className="d-flex  flex-wrap justify-content-center mt-2">
         <div className="d-flex flex-wrap justify-content-between w-100">

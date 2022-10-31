@@ -14,7 +14,7 @@ function Category() {
     <div className=" d-flex text-align-center justify-content-center m-2">
       <div className="d-flex flex-wrap justify-content-between mt-2 m-2">
         {services.map((service, i) => {
-          return <CategoryCard title={service.categoryTitle} key={i} className="col-sm-12 col-md-4" />;
+          return <CategoryCard title={service.categoryTitle} key={i} />;
         })}
 
       </div>

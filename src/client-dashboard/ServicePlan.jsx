@@ -4,6 +4,7 @@ import {Row, Col} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import { MedButton } from '../components/buttons/buttons';
+import {ServicePlanIcon} from '../components/custom-icon'
 
 
 function ServicePlan() {
@@ -23,16 +24,16 @@ function ServicePlan() {
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
       <div className="allTitle">
-        <h3>Service Plan</h3>
+        <h3 className="text-dark">Service Plan</h3>
         <p className="text-secondary">Subscribe for one of our service packages</p>
       </div>
       <Row>
         <Col className="md-6">
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="12" controlId="validationCustom06">
-              <Form.Label className="subscriptionLabel">Subscription Plan</Form.Label>
-              <Form.Select  className="inputSubscription bg-transparent" aria-label="Default select example">
+            <Form.Group as={Col} md="12" className="mb-4" controlId="validationCustom06">
+              <Form.Label className="subscriptionLabel text-dark">Subscription Plan</Form.Label>
+              <Form.Select  className="inputSubscription bg-transparent p-3" aria-label="Default select example">
                 <option >Select Plan</option>
                 <option value="1">Basic</option>
                 <option value="2">Lite</option>
@@ -42,9 +43,9 @@ function ServicePlan() {
                 Please select a subscription plan.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="12" controlId="validationCustom06">
-              <Form.Label className="subscriptionLabel">Service Category</Form.Label>
-              <Form.Select  className="inputSubscription bg-transparent" aria-label="Default select example">
+            <Form.Group as={Col} md="12" className="mb-4" controlId="validationCustom06">
+              <Form.Label className="subscriptionLabel text-dark">Service Category</Form.Label>
+              <Form.Select  className="inputSubscription bg-transparent p-3" aria-label="Default select example">
                 <option >Select Category</option>
                 <option value="1">Basic</option>
                 <option value="2">Lite</option>
@@ -54,9 +55,9 @@ function ServicePlan() {
                 A category is required.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="12" controlId="validationCustom06">
-              <Form.Label className="subscriptionLabel">Payment Method </Form.Label>
-              <Form.Select  className="inputSubscription bg-transparent" aria-label="Default select example">
+            <Form.Group as={Col} md="12" className="mb-4" controlId="validationCustom06">
+              <Form.Label className="subscriptionLabel text-dark">Payment Method </Form.Label>
+              <Form.Select  className="inputSubscription bg-transparent p-3" aria-label="Default select example">
                 <option >Select Payment Method</option>
                 <option value="1">Basic</option>
                 <option value="2">Lite</option>
@@ -73,8 +74,12 @@ function ServicePlan() {
           </MedButton>
         </Form>
         </Col>
-        <Col className="md-6">
-
+        <Col className="md-6 d-flex justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center w-50">
+            <ServicePlanIcon />
+            <p className="text-secondary">Service subscription that get you covered</p>
+            <p className="text-secondary">In fixa, We fix,You flex</p>
+          </div>
         </Col>
 
       </Row>
