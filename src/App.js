@@ -22,8 +22,6 @@ function App() {
           <Route path="my-account" element={<MyAccount />} />
           <Route path="new-requests" element={<NewRequests />} />
           <Route path="track-requests" element={<TrackRequests />} />
-
-
         </Route>
       </Routes>
     </div>
