@@ -30,7 +30,9 @@ const ClientHome = () => {
         </div>
       </div>
       <div className="d-flex justify-content-between mt-2">
-        <LargeButton className="btn btn-primary">New Request</LargeButton>
+        <LargeButton className="btn btn-primary"> 
+          <Link to="/dashboard/new-requests" className="text-light text-decoration-none"> New Request</Link>
+        </LargeButton>
         <LargeButton className="btn btn-outline-primary">
           Track Request
         </LargeButton>
