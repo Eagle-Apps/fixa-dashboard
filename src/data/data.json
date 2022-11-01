@@ -1,72 +1,83 @@
 {
-  "request":[
+  "request": [
     {
-      "requestId":"Fixa001",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"completed"
+      "requestId": "Fixa001",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "completed"
     },
     {
-      "requestId":"Fixa002",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"cancelled"
+      "requestId": "Fixa002",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "cancelled"
     },
     {
-      "requestId":"Fixa003",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"completed"
+      "requestId": "Fixa003",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "completed"
     },
     {
-      "requestId":"Fixa004",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"progressing"
+      "requestId": "Fixa004",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "progressing"
     },
     {
-      "requestId":"Fixa005",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"cancelled"
+      "requestId": "Fixa005",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "cancelled"
     },
     {
-      "requestId":"Fixa006",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"progressing"
+      "requestId": "Fixa006",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "progressing"
     },
     {
-      "requestId":"Fixa007",
-      "jobType":"Plumbing",
-      "serviceType":"express",
-      "task":"Pipeline Leakage",
-      "paymentMethod":"Quick Pay (Bank card)",
-      "status":"completed"
+      "requestId": "Fixa007",
+      "jobType": "Plumbing",
+      "serviceType": "express",
+      "task": "Pipeline Leakage",
+      "paymentMethod": "Quick Pay (Bank card)",
+      "status": "completed"
     }
-  ], 
-  "category":[
+  ],
+  "category": [
     {
-    "categoryTitle":"Automobile Mechanic"
-   
+      "categoryTitle": "Automobile Mechanics"
     },
     {
-      "categoryTitle":"Plumbing Service"
-     
-      }
-
+      "categoryTitle": "Plumbing Services"
+    },
+    {
+      "categoryTitle": "Carpentary Services"
+    },
+    {
+      "categoryTitle": "Painting Services"
+    },
+    {
+      "categoryTitle": "Cleaning Services"
+    },
+    {
+      "categoryTitle": "Drilling Services"
+    },
+    {
+      "categoryTitle": "Electrical Services"
+    }
   ]
- 
 }

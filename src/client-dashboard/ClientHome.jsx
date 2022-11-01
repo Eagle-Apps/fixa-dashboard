@@ -1,15 +1,10 @@
 import React from "react";
 import { LargeButton, MedButton } from "../components/buttons/buttons";
 import CategoryCard from "../components/cards/CategoryCard";
-import { AutoMobileIcon } from "../components/custom-icon";
+import { AutoMobileIcon, PlumbingIcon, CarpentaryIcon } from "../components/custom-icon";
 import InfoBox from "../components/InfoBox";
-import JsonData from "../data/data.json";
+import {Link} from 'react-router-dom'
 const ClientHome = () => {
-  const [services, setServices] = React.useState([]);
-
-  React.useEffect(() => {
-    setServices(JsonData.category);
-  }, []);
 
   return (
     <div>
@@ -35,23 +30,29 @@ const ClientHome = () => {
         </div>
       </div>
       <div className="d-flex justify-content-between mt-2">
-        <LargeButton className="btn btn-primary">New Request</LargeButton>
+        <LargeButton className="btn btn-primary"> 
+          <Link to="/dashboard/new-requests" className="text-light text-decoration-none"> New Request</Link>
+        </LargeButton>
         <LargeButton className="btn btn-outline-primary">
-          Track Request
+        <Link to="/dashboard/track-requests" className="text-primary text-decoration-none"> Track Request</Link>
         </LargeButton>
       </div>
-      <div className="d-flex justify-content-around mt-2">
-        {services.map((service, i) => {
-          return <CategoryCard title={service.categoryTitle} key={i} />;
-        })}
-
-        {/*         
-        // <CategoryCard title="Automobile">
-        //   <AutoMobileIcon />
-        // </CategoryCard>
-        // <CategoryCard title="Automobile">
-        //   <AutoMobileIcon />
-        // </CategoryCard> */}
+      <div className="d-flex justify-content-between w-100">
+        <h3 className="text-dark">Our Top Services</h3>
+        <Link to="/dashboard/all-categories" className="text-dark">all categories</Link>
+      </div>
+      <div className="d-flex  flex-wrap justify-content-center mt-2">
+        <div className="d-flex flex-wrap justify-content-between w-100">
+          <CategoryCard className="col-sm-12 col-md-4" title="Automobile Mechanics">
+            <AutoMobileIcon />
+          </CategoryCard>
+          <CategoryCard className="col-sm-12 col-md-4" title="Plumbing Services">
+            <PlumbingIcon />
+          </CategoryCard>
+          <CategoryCard className="col-sm-12 col-md-4" title="Carpentary Services">
+            <CarpentaryIcon />
+          </CategoryCard>
+        </div>
       </div>
     </div>
   );

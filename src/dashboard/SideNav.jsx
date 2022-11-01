@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
+// import {FixaLogo} from '../components/custom-icon'
 
 function SideNav(props) {
   return (
@@ -9,7 +10,7 @@ function SideNav(props) {
     >
       <div className="app-brand demo">
         <RouterNavLink to="/dashboard" className="app-brand-link">
-          <span className="app-brand-logo demo">{/* <LogoSvg /> */}</span>
+          <span className="app-brand-logo demo">{/* <FixaLogo /> */}</span>
           <span className="app-brand-text demo menu-text fw-bolder ms-2">
             Fixa
           </span>
