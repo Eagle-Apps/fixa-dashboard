@@ -220,3 +220,24 @@ export const CheckboxIcon = () => {
     </svg>
   );
 };
+
+export const EllipseIcon = () => {
+  return (
+    <svg
+      width={29}
+      height={29}
+      viewBox="0 0 29 29"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="14.5"
+        cy="14.5"
+        r="11.5"
+        fill="#D9D9D9"
+        stroke="black"
+        strokeWidth={6}
+      />
+    </svg>
+  );
+};

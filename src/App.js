@@ -6,7 +6,8 @@ import ServicePlan from "./client-dashboard/ServicePlan";
 import Category from "./client-dashboard/allCategories/Category";
 import FixaPay from "./client-dashboard/FixaPay/FixaPay";
 import MyAccount from "./client-dashboard/Account/MyAccount";
-import NewRequests from "./client-dashboard/newRequests/NewRequests"
+import NewRequests from "./client-dashboard/newRequests/NewRequests";
+import TrackRequests from "./client-dashboard/trackRequests/TrackRequests";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="fixa-pay" element={<FixaPay />} />
           <Route path="my-account" element={<MyAccount />} />
           <Route path="new-requests" element={<NewRequests />} />
+          <Route path="track-requests" element={<TrackRequests />} />
 
 
         </Route>

@@ -34,7 +34,7 @@ const ClientHome = () => {
           <Link to="/dashboard/new-requests" className="text-light text-decoration-none"> New Request</Link>
         </LargeButton>
         <LargeButton className="btn btn-outline-primary">
-          Track Request
+        <Link to="/dashboard/track-requests" className="text-primary text-decoration-none"> Track Request</Link>
         </LargeButton>
       </div>
       <div className="d-flex justify-content-between w-100">
