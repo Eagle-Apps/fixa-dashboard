@@ -1,6 +1,9 @@
 import React from "react";
 import CustomTab from "../../components/tab/Tabs";
 import Profile from "./Profile";
+import Verification from "./Verification";
+import Subscription from "./Subscription"
+import PaymentSettings from "./PaymentSettings";
 
 function MyAccount() {
   
@@ -16,6 +19,9 @@ function MyAccount() {
       </div>
       <CustomTab tabs={tabs} >
         <Profile />
+        {/* <Verification/> */}
+        {/* <Subscription/> */}
+        {/* <PaymentSettings/> */}
       </CustomTab>
 
     </div>
