@@ -8,13 +8,14 @@ import FixaPay from "./client-dashboard/FixaPay/FixaPay";
 import MyAccount from "./client-dashboard/Account/MyAccount";
 import NewRequests from "./client-dashboard/newRequests/NewRequests";
 import TrackRequests from "./client-dashboard/trackRequests/TrackRequests";
-
+import Login from "./client-dashboard/Account/Login";
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route path="/" element={<Login />}>
           <Route index element={<ClientHome />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="service-plans" element={<ServicePlan />} />
           <Route path="request-history" element={<RequestHistory />} />
           <Route path="all-categories" element={<Category />} />
