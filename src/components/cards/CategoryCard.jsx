@@ -58,6 +58,9 @@ function CategoryCard(props) {
         <div className="category-title">
           <h4 className="text-dark fw-bold ">{props.title}</h4>
         </div>
+        <div className="plan">
+          <h5 className="text-success fw-bold">{props.plan}</h5>
+        </div>
       </div>
     </Div>
   );
