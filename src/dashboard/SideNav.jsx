@@ -33,7 +33,7 @@ function SideNav(props) {
           </RouterNavLink>
         </li>
         <li className="menu-item ">
-          <RouterNavLink to="cv-upload" className="menu-link">
+          <RouterNavLink to={`my-account`} className="menu-link">
             <i className="menu-icon tf-icons bx bx-file" />
             <div data-i18n="Analytics">Profile</div>
           </RouterNavLink>
