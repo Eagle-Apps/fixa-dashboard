@@ -1,7 +1,22 @@
+import React from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { FixaLogo } from "../../components/custom-icon";
+import { useDispatch, useSelector } from "react-redux";
+import { signin } from "../../store/actions/authActions";
 
 export default function Login() {
+  const [inputValue, setInputValue] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const state = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    //validate
+    dispatch(signin(inputValue));
+  };
   return (
     <div>
       <Container>
@@ -18,9 +33,7 @@ export default function Login() {
                   <div className="mb-3">
                     <Form>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>
-                          Email
-                        </Form.Label>
+                        <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" />
                       </Form.Group>
 

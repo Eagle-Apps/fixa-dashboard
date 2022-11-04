@@ -1,18 +1,18 @@
 import * as api from "../api/index.js";
 
-export const signup = (formData) => async (dispatch) => {
-  try {
-    const { data } = await api.signUp(formData);
+// export const signup = (formData) => async (dispatch) => {
+//   try {
+//     const { data } = await api.signUp(formData);
 
-    dispatch({ type: "AUTH", data });
-    dispatch({ type: "GET_SUCCESS_MSG", payload: data });
-  } catch (error) {
-    dispatch({
-      type: "GET_ERROR_MSG",
-      payload: error?.response?.data,
-    });
-  }
-};
+//     dispatch({ type: "AUTH", data });
+//     dispatch({ type: "GET_SUCCESS_MSG", payload: data });
+//   } catch (error) {
+//     dispatch({
+//       type: "GET_ERROR_MSG",
+//       payload: error?.response?.data,
+//     });
+//   }
+// };
 
 export const signin = (formData) => async (dispatch) => {
   try {
