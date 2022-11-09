@@ -2,9 +2,9 @@ function CustomTab(props) {
   return (
     <>
       <ul className="nav nav-tabs" id="myTab" role="tablist">
-        {props.tabs.map((tab) => {
+        {props.tabs.map((tab, i) => {
           return (
-            <li className="nav-item" role="presentation">
+            <li className="nav-item" role="presentation" key={i}>
               <button
                 className={
                   props.isActive === tab ? "nav-link active" : "nav-link "
@@ -26,14 +26,7 @@ function CustomTab(props) {
         })}
       </ul>
       <div className="tab-content" id="myTabContent">
-        <div
-          className="tab-pane fade show active"
-          id="home"
-          role="tabpanel"
-          aria-labelledby="home-tab"
-        >
-          {props.children}
-        </div>
+        {props.children}
       </div>
     </>
   );

@@ -1,4 +1,7 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getProfile } from "./store/actions/userProfileActions";
 import Login from "./client-dashboard/Account/Login";
 import MyAccount from "./client-dashboard/Account/MyAccount";
 import Category from "./client-dashboard/allCategories/Category";
@@ -10,14 +13,19 @@ import ServicePlan from "./client-dashboard/ServicePlan";
 import TrackRequests from "./client-dashboard/trackRequests/TrackRequests";
 import Dashboard from "./dashboard/Index";
 
-
-
 function App() {
+  const dispatch = useDispatch();
+  const userid = sessionStorage.getItem("fixa::token")
+    ? JSON.parse(sessionStorage.getItem("fixa::token"))
+    : null;
+
+  React.useEffect(() => {
+    if (userid) dispatch(getProfile(userid?.id));
+  }, [dispatch, userid]);
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Dashboard />}>
+        <Route path="/" element={userid ? <Dashboard /> : <Login />}>
           <Route index element={<ClientHome />} />
           <Route path="service-plans" element={<ServicePlan />} />
           <Route path="request-history" element={<RequestHistory />} />

@@ -1,12 +1,4 @@
 import React from "react";
-// import {
-//   FaGlobe,
-//   FaList,
-//   FaRegBell,
-//   FaRegCommentAlt,
-//   FaRegMoon,
-//   FaRegSnowflake,
-// } from "react-icons/fa";
 import { Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -46,7 +38,7 @@ function Header(props) {
         <ul className="navbar-nav flex-row align-items-center ms-auto">
           <li className="nav-item lh-1 me-3">
             <a href="#hc">
-              <i class="bx bxs-bell"></i>
+              <i className="bx bxs-bell"></i>
             </a>
           </li>
           <Dropdown className="nav-item navbar-dropdown dropdown-user dropdown">
@@ -92,7 +84,7 @@ function Header(props) {
               </Dropdown.Item>
               <Dropdown.Item href="#">
                 {" "}
-                <i class="bx bx-power-off me-2"></i>
+                <i className="bx bx-power-off me-2"></i>
                 <span className="align-middle">Logout</span>
               </Dropdown.Item>
             </Dropdown.Menu>

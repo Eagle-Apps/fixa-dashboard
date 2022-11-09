@@ -37,7 +37,12 @@ function Verification() {
   }
 
   return (
-    <div>
+    <div
+      className="tab-pane fade show"
+      id="Verification"
+      role="tabpanel"
+      aria-labelledby="verification-tab"
+    >
       <Form
         noValidate
         validated={validated}

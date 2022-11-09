@@ -8,45 +8,39 @@ import { ToastContainer, toast } from "react-toastify";
 import { clearNotifications } from "../../store/actions/notificationsActions";
 
 export default function Login() {
-  const [inputs, setInputs] = useState({email:"",password:""});
+  const [inputs, setInputs] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-
   const handleChange = (event) => {
-    const {name,value} = event.target;
-   
-    setInputs(values => ({...values, [name]: value}))
-  }
-  
+    const { name, value } = event.target;
+
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
   const notification = useSelector((state) => state.notification);
-  console.log(notification)
+
   const dispatch = useDispatch();
 
-  React.useEffect(()=>{
-   if (notification?.errors?.message){
-    toast.error(notification?.errors?.message)
-   }
-   dispatch(clearNotifications())
-  },[notification])
-
+  React.useEffect(() => {
+    if (notification?.errors?.message) {
+      toast.error(notification?.errors?.message);
+    }
+    dispatch(clearNotifications());
+  }, [dispatch, notification]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     try {
       setLoading(true);
-      
-      dispatch(signin(inputs, navigate))
-     
-    } catch (error) {
-    
-    }
+
+      dispatch(signin(inputs, navigate));
+    } catch (error) {}
     setLoading(false);
-  }
-  
+  };
+
   return (
     <div>
-      
       <Container>
         <Row className="vh-100 d-flex justify-content-center align-items-center text-dark">
           <Col sm={7} md={7} lg={6} xl={4} xs={12}>
@@ -62,14 +56,13 @@ export default function Login() {
                     <Form onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control 
-                            type="email" 
-                            onChange={handleChange} 
-                            placeholder="Enter email" 
-                            name="email"
-                            value={inputs.email || ""}
-                            required
-
+                        <Form.Control
+                          type="email"
+                          onChange={handleChange}
+                          placeholder="Enter email"
+                          name="email"
+                          value={inputs.email}
+                          required
                         />
                       </Form.Group>
 
@@ -78,14 +71,14 @@ export default function Login() {
                         controlId="formBasicPassword"
                       >
                         <Form.Label>Password</Form.Label>
-                        <Form.Control 
-                            type="password" 
-                            onChange={handleChange} 
-                            placeholder="Password"
-                            name="password"
-                            value={inputs.password || ""}
-                            required
-                          />
+                        <Form.Control
+                          type="password"
+                          onChange={handleChange}
+                          placeholder="Password"
+                          name="password"
+                          value={inputs.password}
+                          required
+                        />
                       </Form.Group>
                       <Form.Group
                         className="mb-3"
@@ -98,10 +91,11 @@ export default function Login() {
                         </p>
                       </Form.Group>
                       <div className="d-grid">
-                        <Button 
-                            disabled={loading} 
-                            variant="primary" 
-                            type="submit">
+                        <Button
+                          disabled={loading}
+                          variant="primary"
+                          type="submit"
+                        >
                           Login
                         </Button>
                       </div>
@@ -109,8 +103,7 @@ export default function Login() {
                     <div className="mt-3">
                       <p className="mb-0  text-center">
                         Don't have an account?{" "}
-                        <a href="{''}" 
-                        className="text-primary fw-bold">
+                        <a href="{''}" className="text-primary fw-bold">
                           Sign Up
                         </a>
                       </p>

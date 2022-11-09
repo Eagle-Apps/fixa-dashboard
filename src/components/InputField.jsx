@@ -26,10 +26,9 @@ function InputField({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          isInvalid={!!error}
+          // isInvalid={!!error}
           required={require}
           readOnly={read}
-          hasValidation
         />
 
         <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
