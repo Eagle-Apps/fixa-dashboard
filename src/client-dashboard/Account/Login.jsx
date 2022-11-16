@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { FixaLogo } from "../../components/custom-icon";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../../store/actions/authActions";
 import { ToastContainer, toast } from "react-toastify";
@@ -31,11 +31,8 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    try {
-      setLoading(true);
-
-      dispatch(signin(inputs, navigate));
-    } catch (error) {}
+    setLoading(true);
+    dispatch(signin(inputs, navigate));
     setLoading(false);
   };
 
@@ -103,9 +100,9 @@ export default function Login() {
                     <div className="mt-3">
                       <p className="mb-0  text-center">
                         Don't have an account?{" "}
-                        <a href="{''}" className="text-primary fw-bold">
+                        <Link to="/register" className="text-primary fw-bold">
                           Sign Up
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </div>

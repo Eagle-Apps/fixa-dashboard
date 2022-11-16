@@ -26,7 +26,7 @@ const authReducer = (
       return { ...state, errors: action.payload };
 
     case "LOGOUT":
-      sessionStorage.removeItem("profile");
+      sessionStorage.removeItem("fixa::token");
 
       return { ...state, authData: null, loading: false, errors: null };
     default:

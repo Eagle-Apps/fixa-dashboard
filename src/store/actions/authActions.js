@@ -1,25 +1,28 @@
 import * as api from "../api/index.js";
 
-// export const signup = (formData) => async (dispatch) => {
-//   try {
-//     const { data } = await api.signUp(formData);
+export const signup = (formData) => async (dispatch) => {
+  try {
+    const { data } = await api.signUp(formData);
 
-//     dispatch({ type: "AUTH", data });
-//     dispatch({ type: "GET_SUCCESS_MSG", payload: data });
-//   } catch (error) {
-//     dispatch({
-//       type: "GET_ERROR_MSG",
-//       payload: error?.response?.data,
-//     });
-//   }
-// };
+    dispatch({ type: "AUTH", data });
+    dispatch({
+      type: "GET_SUCCESS_MSG",
+      payload: { message: "signup is successful!" },
+    });
+  } catch (error) {
+    dispatch({
+      type: "GET_ERROR_MSG",
+      payload: error?.response?.data,
+    });
+  }
+};
 
 export const signin = (formData, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signIn(formData);
 
     dispatch({ type: "AUTH", data });
-  navigate('/')
+    navigate("/dashboard");
   } catch (error) {
     dispatch({
       type: "GET_ERROR_MSG",
@@ -96,3 +99,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
 //     dispatch({ type: "STOP_FETCHING" });
 //   }
 // };
+
+export const logout = () => (dispatch) => {
+  dispatch({ type: "LOGOUT" });
+};

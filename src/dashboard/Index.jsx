@@ -3,8 +3,14 @@ import SideNav from "./SideNav";
 import Header from "./Header";
 import { Outlet } from "react-router";
 import init from "./init";
+import { useDispatch } from "react-redux";
+import { getProfile } from "../store/actions/userProfileActions";
 
 function Index(props) {
+  const dispatch = useDispatch();
+  const userid = sessionStorage.getItem("fixa::token")
+    ? JSON.parse(sessionStorage.getItem("fixa::token"))
+    : null;
   React.useEffect(() => {
     init();
   }, []);
@@ -13,6 +19,9 @@ function Index(props) {
     window.Helpers.toggleCollapsed(true);
   };
 
+  React.useEffect(() => {
+    if (userid) dispatch(getProfile(userid?.id));
+  }, [dispatch, userid]);
   return (
     <div className="layout-wrapper layout-content-navbar ">
       <div className="layout-container">

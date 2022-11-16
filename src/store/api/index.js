@@ -20,5 +20,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
+export const signUp = (formData) => API.post("/register", formData);
 export const signIn = (formData) => API.post("/login", formData);
 export const getProfile = (id) => API.get(`/fetchclient/${id}`);
+export const updateProfile = (data) => API.put("/editprofile", data);

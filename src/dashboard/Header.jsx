@@ -1,8 +1,17 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../store/actions/authActions";
+import { useDispatch } from "react-redux";
 
 function Header(props) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
   return (
     <nav
       className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -82,7 +91,7 @@ function Header(props) {
                   <span className="align-middle"> My Profile </span>{" "}
                 </Link>
               </Dropdown.Item>
-              <Dropdown.Item href="#">
+              <Dropdown.Item href="#" onClick={handleLogout}>
                 {" "}
                 <i className="bx bx-power-off me-2"></i>
                 <span className="align-middle">Logout</span>

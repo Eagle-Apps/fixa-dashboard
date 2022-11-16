@@ -12,20 +12,15 @@ import RequestHistory from "./client-dashboard/requesthistory/RequestHistory";
 import ServicePlan from "./client-dashboard/ServicePlan";
 import TrackRequests from "./client-dashboard/trackRequests/TrackRequests";
 import Dashboard from "./dashboard/Index";
+import Register from "./client-dashboard/Account/Register";
 
 function App() {
-  const dispatch = useDispatch();
-  const userid = sessionStorage.getItem("fixa::token")
-    ? JSON.parse(sessionStorage.getItem("fixa::token"))
-    : null;
-
-  React.useEffect(() => {
-    if (userid) dispatch(getProfile(userid?.id));
-  }, [dispatch, userid]);
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={userid ? <Dashboard /> : <Login />}>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<ClientHome />} />
           <Route path="service-plans" element={<ServicePlan />} />
           <Route path="request-history" element={<RequestHistory />} />

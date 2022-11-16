@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { useLocation } from "react-router-dom";
 import InputField from "../../components/InputField";
 import { MedButton } from "../../components/buttons/buttons";
-import { useSelector, useDispatch } from "react-redux";
-import { fixa } from "../../api";
+import { useSelector } from "react-redux";
+import { updateProfile } from "../../store/api";
 
 function Profile() {
   const { profile } = useSelector((state) => state.client);
 
-  console.log(profile);
   const [inputValue, setInputValue] = useState({
     firstName: profile?.name.split(" ")[1],
     lastName: profile?.name.split(" ")[0],
@@ -21,8 +19,6 @@ function Profile() {
     city: profile.city,
     state: profile.state,
     zipCode: profile.zipCode,
-    password: "",
-    confirmPassword: "",
   });
 
   const [validated, setValidated] = useState(false);
@@ -40,16 +36,8 @@ function Profile() {
       }
 
       setValidated(true);
-      const {
-        data: { token },
-      } = await fixa.post("/my-account", inputValue);
     } catch (e) {}
   };
-  let submit = useLocation();
-
-  function handleClick() {
-    submit.push("/");
-  }
 
   return (
     <div
@@ -195,10 +183,7 @@ function Profile() {
             require={true}
           />
         </Row>
-        <MedButton
-          className="bg-primary w-100 text-light"
-          onSubmit={handleClick}
-        >
+        <MedButton className="bg-primary w-100 text-light">
           Update Profile
         </MedButton>
       </Form>
