@@ -31,19 +31,19 @@ export const signin = (formData, navigate) => async (dispatch) => {
   }
 };
 
-// export const updateprofile = (formData, router) => async (dispatch) => {
-//   try {
-//     const { data } = await api.profileUpdate(formData);
+export const updateprofile = (formData, router) => async (dispatch) => {
+  try {
+    const { data } = await api.updateProfile(formData);
 
-//     dispatch({ type: "GET_SUCCESS_MSG", payload: data });
-//     dispatch({ type: "AUTH", data });
-//   } catch (error) {
-//     dispatch({
-//       type: "GET_ERROR_MSG",
-//       payload: error?.response?.data,
-//     });
-//   }
-// };
+    dispatch({ type: "GET_SUCCESS_MSG", payload: data });
+    dispatch({ type: "AUTH", data });
+  } catch (error) {
+    dispatch({
+      type: "GET_ERROR_MSG",
+      payload: error?.response?.data,
+    });
+  }
+};
 
 // export const updateimage = (formData, router) => async (dispatch) => {
 //   try {
