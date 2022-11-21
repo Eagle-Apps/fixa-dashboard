@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const LargeButton = styled.button`
-  height: 116px;
-  width: 460px;
+  /* height: 116px; */
+  /* width: 460px; */
+  height: 60px;
+  width: 20%;
   border-radius: 5px;
   padding: 10px, 22px, 10px, 22px;
   margin: 8px;
@@ -34,4 +36,14 @@ export const MedButton = styled.button`
   line-height: 13px;
   text-align: center;
   letter-spacing: 0.366667px;
+`;
+export const StyledButton = styled.button`
+  margin: 0.5rem auto;
+  width: 30%;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: ${(props) => props.color || "#fff"};
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 `;

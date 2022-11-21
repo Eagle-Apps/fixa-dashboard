@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import { MedButton } from "../../components/buttons/buttons";
 import InputField from "../../components/InputField";
+import { VerifyStyle } from "../../components/custom.styles";
 
 function Verification() {
   const [inputValue, setInputValue] = useState({
@@ -37,7 +38,7 @@ function Verification() {
   }
 
   return (
-    <div
+    <VerifyStyle
       className="tab-pane fade show"
       id="Verification"
       role="tabpanel"
@@ -51,17 +52,6 @@ function Verification() {
       >
         <Row className="mb-3">
           <InputField
-            label="BVN"
-            type="text"
-            name="bvn"
-            value={inputValue.bvn}
-            onChange={handleChange}
-            placeholder="enter BVN"
-            error="please enter your BVN"
-            className="col-lg-12 bg-transparent p-3"
-            require={true}
-          />
-          <InputField
             label="NIN"
             type="text"
             name="nin"
@@ -72,6 +62,7 @@ function Verification() {
             className="col-lg-12 bg-transparent p-3"
             require={true}
           />
+          <p>Or</p>
           <Form.Group
             as={Col}
             md="12"
@@ -88,6 +79,17 @@ function Verification() {
               Please provide a picture of your NIN slip
             </Form.Control.Feedback>
           </Form.Group>
+          <InputField
+            label="BVN"
+            type="text"
+            name="bvn"
+            value={inputValue.bvn}
+            onChange={handleChange}
+            placeholder="enter BVN"
+            error="please enter your BVN"
+            className="col-lg-12 bg-transparent p-3"
+            require={true}
+          />
         </Row>
         <MedButton
           className="bg-primary w-100 text-light"
@@ -96,7 +98,7 @@ function Verification() {
           Update KYC
         </MedButton>
       </Form>
-    </div>
+    </VerifyStyle>
   );
 }
 
