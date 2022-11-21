@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
+import { NavLink, NavLink as RouterNavLink } from "react-router-dom";
+import { MyNavLink } from "../components/custom.styles";
 // import {FixaLogo} from '../components/custom-icon'
-
 function SideNav(props) {
   return (
     <aside
@@ -26,36 +26,53 @@ function SideNav(props) {
       <ul className="menu-inner py-1">
         {/* Dashboard */}
 
-        <li className="menu-item active">
-          <RouterNavLink to="/dashboard" className="menu-link">
+        <MyNavLink
+          to="/dashboard"
+          className="menu-item"
+          activeClassName="active"
+        >
+          <div className="flex">
             <i className="menu-icon tf-icons bx bx-home-circle" />
             <div data-i18n="Analytics">Dashboard</div>
-          </RouterNavLink>
-        </li>
-        <li className="menu-item ">
-          <RouterNavLink to={`my-account`} className="menu-link">
+          </div>
+        </MyNavLink>
+        <MyNavLink
+          to={`my-account`}
+          className="menu-item"
+          activeClassName="active"
+        >
+          <div className="flex">
             <i className="menu-icon tf-icons bx bx-file" />
             <div data-i18n="Analytics">Profile</div>
-          </RouterNavLink>
-        </li>
-        <li className="menu-item ">
-          <RouterNavLink to={`request-history`} className="menu-link">
+          </div>
+        </MyNavLink>
+
+        <MyNavLink
+          to={`request-history`}
+          className="menu-item"
+          activeClassName="active"
+        >
+          <div className="flex">
             <i className="menu-icon tf-icons bx bx-user" />
             <div data-i18n="Analytics">Request History</div>
-          </RouterNavLink>
-        </li>
-        <li className="menu-item ">
-          <RouterNavLink to="service-invoice" className="menu-link">
+          </div>
+        </MyNavLink>
+        <MyNavLink to="service-invoice" className="menu-item">
+          <div className="flex">
             <i className="menu-icon tf-icons bx bx-file" />
             <div data-i18n="Analytics">Service Invoice</div>
-          </RouterNavLink>
-        </li>
-        <li className="menu-item ">
-          <RouterNavLink to="service-plans" className="menu-link">
+          </div>
+        </MyNavLink>
+        <MyNavLink
+          to="service-plans"
+          className="menu-item"
+          activeClassName="active"
+        >
+          <div className="flex">
             <i className="menu-icon tf-icons bx bx-file" />
-            <div data-i18n="Analytics">Service Plans</div>
-          </RouterNavLink>
-        </li>
+            <div data-i18n="Analytics">Subscriptions</div>
+          </div>
+        </MyNavLink>
         {/* Layouts */}
         {/* <li className="menu-item">
           <a href="/dashboard" className="menu-link menu-toggle">

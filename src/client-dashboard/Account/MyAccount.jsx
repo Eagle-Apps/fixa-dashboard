@@ -2,11 +2,12 @@ import React from "react";
 import CustomTab from "../../components/tab/Tabs";
 import Profile from "./Profile";
 import Verification from "./Verification";
-import Subscription from "./Subscription";
 import PaymentSettings from "./PaymentSettings";
+import ChangePassword from "./ChangePassword";
+import ServicePlan from "./ServicePlan";
 
 function MyAccount() {
-  const tabs = ["Profile", "Verification", "Subscription", "Payment"];
+  const tabs = ["Profile", "Verification", "Service_Plan", "Changepassword"];
 
   return (
     <div className="container-xxl flex-grow-1 container-p-y">
@@ -16,8 +17,8 @@ function MyAccount() {
       <CustomTab tabs={tabs}>
         <Profile />
         <Verification />
-        <Subscription />
-        <PaymentSettings />
+        <ServicePlan />
+        <ChangePassword />
       </CustomTab>
     </div>
   );
